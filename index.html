@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pomodoro Clock By Tomasz Duda</title>
+	<link rel="icon" type="image/gif" href="imgs/tomato-icon.png" />
+	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Indie+Flower|Russo+One|Inconsolata" rel="stylesheet">
+</head>
+<body>
+	<header>
+		<h1>Pomodoro &#128340;</h1>
+	</header>
+	
+	<section>
+		<div class="tomato">
+			<div class="tomato__pic">
+				<img src="imgs/tomato.png" alt="tomato picture">
+				<button class="tomato__button tomato__button-active">Click to START!</button>
+				<div class="container">
+					<div class="timeline">
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+						<div class="timeline__unit"></div>
+					</div>
+				</div>
+				<div class="pointer"></div>
+			</div>
+		</div>
+		<div class="buttons">
+			<h3>Work</h3>
+			<div class="buttons__work">
+
+				<button class="button__time">-</button>
+				<form>
+					<input id="work" type="text" value="25" readonly>
+				</form>
+				<button class="button__time">+</button>
+			</div>
+			<h3>Break</h3>
+			<div class="buttons__break">
+				<button class="button__time">-</button>
+				<form id="minus">
+					<input id="break" type="text" value="5" readonly>
+				</form>
+				<button class="button__time">+</button>
+			</div>
+		</div>
+		<div class="timer">
+			<p>00:00</p>
+			<button class="timer__pause" onclick="pause()">Pause</button>
+			<button class="timer__reset" onclick="reset()">Reset</button>
+		</div>	
+	</section>
+
+
+	<script src="script.js"></script>
+</body>
+</html>
