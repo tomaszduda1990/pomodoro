@@ -1,5 +1,6 @@
 const workTime = document.getElementById('work');
 const breakTime = document.getElementById('break');
+const body = document.querySelector('body');
 const buttonsTime = document.querySelectorAll('.button__time');
 const displayTime = document.querySelector('.timer > p');
 const timeline = document.querySelector('.timeline');
@@ -42,6 +43,7 @@ function timer(seconds, sessionName){
 		if(secsLeft<=0){
 			audio.play();
 			clearInterval(countdown);
+			body.classList.add(`animation-${sessionName}`)
 			sessionName == 'work' ? timer(breakTime.value, breakTime.id) : timer(workTime.value, workTime.id);
 			return;
 		}
@@ -88,7 +90,10 @@ function reset(){
 	pointer.classList.remove('pointer-active');
 	displayTime.parentNode.classList.remove('timer-active');
 	tomatoButton.classList.add('tomato__button-active');
+	document.title = `Pomodoro Clock by Tomasz Duda`;
 }
-
+body.addEventListener('animationend', function(){
+	this.className = "";
+})
 tomatoButton.addEventListener('click', startSession);
 buttonsTime.forEach(button => button.addEventListener("click", changeTime));

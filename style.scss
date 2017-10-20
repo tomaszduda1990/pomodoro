@@ -8,12 +8,41 @@ html{
 	        box-sizing: inherit;
 }
 body{
-	background: DarkSlateGray;
+	background: Cornsilk;
 	min-height: 100vh;
 	padding: 0;
 	margin: 0;
-	overflow: hidden;
+	// overflow: hidden;
+	&:after{
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: 100;
+		text-align: center;
+		font-family: 'Indie Flower', cursive;
+		font-size: 500%;
+		display: inline-block;
+    	vertical-align: middle;
+    	line-height: normal;
+
+	}
 }
+.animation-work{
+	&:after{
+		content: 'Let\' take a break !';
+		background: aqua;
+		animation: workTransition 1.5s ease-in-out;
+	}
+}
+.animation-break{
+	&:after{
+		content: 'Go back to work !';
+		animation: workTransition 1.5s ease-in-out;
+		background: LightGreen;
+	}
+}
+
 button{
 	outline: none;
 }
@@ -22,14 +51,19 @@ header{
 
 	h1{
 		position: relative;
-		text-align: center;
+		
 		margin: 0;
 		padding: 1rem;
 		font-family: 'Indie Flower', cursive;
 		font-size: 7rem;
 		letter-spacing: 1rem;
-		color: white;
-		border-bottom: .1rem solid white;
+		color: DarkSlateGray;
+		border-bottom: .1rem solid DarkSlateGray;
+		border-bottom-right-radius: 50%;
+		-webkit-box-shadow: 3px 3px 13px 0px rgba(0,0,0,0.75);
+		-moz-box-shadow: 3px 3px 13px 0px rgba(0,0,0,0.75);
+		box-shadow: 3px 3px 13px 0px rgba(0,0,0,0.75);
+
 	}
 }
 section{
@@ -240,27 +274,36 @@ section{
 				height: 6rem;
 				font-size: 3rem;
 				font-weight: 700;
-				&:nth-child(1){
+				transition: .5s;
+				line-height: 100%;
+				filter: brightness(85%);
+				&:nth-child(2){
 					background: violet;
 					color: whitesmoke;
+
 				}
-				&:nth-child(3){
+				&:nth-child(4){
 					background: #b4d445;
 					color: DarkSlateGray;
 				}
 				&:hover{
+					filter: brightness(100%);
+					border-radius: 0;
+					transform: rotate(180deg) scale(0.8);	
 					cursor: pointer;
+
 				}
 			}
 		}
 	}
 	.timer{
+		margin: 0 1rem;
 		opacity: 0;
 		visibility: hidden;
 		transition: .7s;
 		position: absolute;
 		top: 0;
-		right: 0;
+		right: 4rem;
 		border-radius: 4rem;
 		text-align: center;
 		&-active{
@@ -268,12 +311,11 @@ section{
 			visibility: visible;
 		}
 		p{
-			position: relative;
 			padding: 0;
 			margin: 0;
 			font-family: "Inconsolata", sans-serif;
-			color: whitesmoke;
-			font-size: 13rem;
+			color: #84BD93;
+			font-size: 10rem;
 			border: 1rem solid black;
 			border-radius: 1rem;
 			margin-bottom: 1rem;
@@ -285,20 +327,157 @@ section{
 			margin: 0 1rem;
 			font-family: 'Russo One', sans-serif;
 			letter-spacing: 0.3rem; 
-			border-radius: .5rem;
+			border-radius: 1rem;
 			border: none;
-			background: whitesmoke;
+			background: indigo;
+			color: whitesmoke;
+			filter: brightness(80%); 
+			transition: .5s;
 			&:hover{
+				filter: brightness(100%);
+				border-radius: 0;
 				cursor: pointer;
 			}
 		}
 	}
 }
+@media screen and (max-width: 1166px) and (min-width: 700px){
+	section{
+		.buttons{
+			position: relative;
+			width: 100%;
+			display: flex;
+
+		}
+		.timer{
+			right: 100%;
+			&-active{
+				position: relative;
+				right: 0;
+			}
+			
+		}
+
+	}
+}
+@media screen and (max-width: 699px) and (min-width: 450px){
+	header{
+		h1{
+			font-size: 5rem;
+		}
+	}
+	section{
+		.buttons{
+			position: relative;
+			width: 100%;
+			display: flex;
+
+		}
+		.timer{
+			right: 100%;
+			&-active{
+				position: relative;
+				right: 0;
+			}
+			p{
+				font-size: 5rem;
+			}
+		}
+		.tomato{
+			&__pic{
+				width: 45rem;
+				height: 45rem;
+				img{
+					height: 40rem;
+					width: 40rem;
+				}
+				.container{
+					width: 34rem;
+				}
+			}
+		}
+
+	}
+}
+@media screen and (max-width: 449px){
+	header{
+		h1{
+			font-size: 3.8rem;
+		}
+	}
+	section{
+		.buttons{
+			position: relative;
+			width: 100%;
+			display: flex;
+
+		}
+		.timer{
+			right: 100%;
+			&-active{
+				position: relative;
+				right: 0;
+			}
+			p{
+				font-size: 5rem;
+			}
+		}
+		.buttons{
+			&__break, &__work{
+				button{
+					width: 4rem;
+					height: 4rem;
+				}
+			}
+		}
+		.tomato{
+			&__pic{
+				width: 35rem;
+				height: 35rem;
+				img{
+					height: 30rem;
+					width: 30rem;
+				}
+				.tomato__button{
+					width: 7rem;
+					height: 7rem;
+					margin-left: -3.5rem;
+					font-size: 1.5rem;
+				}
+				.container{
+					width: 24rem;
+				}
+				.pointer{
+					top: 65%;
+				}
+			}
+		}
+
+	}
+}
+
 @keyframes pulse{
 	from{
 		transform: scale(1);
 	}
 	to{
 		transform: scale(1.1);
+	}
+}
+@keyframes workTransition{
+	0%{
+		top: 0; 
+		left: 0;
+		height: 0;
+	}
+	50%{
+		top: 0; 
+		left: 0;
+		height: 120%;
+	}
+	100%{
+		top: 115%;
+		left: 0;
+		height: 100%;
 	}
 }
